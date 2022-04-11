@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Drawing Pad</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <container class="etch-container">
+         <div class="app-container">
+            <div class="inner-app-container">
+               <h1>Drawing Pad</h1>
+               <div id="grid-container-shadow">
+                  <div id="grid-container" class="grid-container">
+                  </div>
+               </div>
+               <p class="copy-class">&copy; 2022 Ash Madden</p>
+            </div>
+            <div class="button-group">
+               <p id="gridDimensions">50 x 50</p>
+               <input id = "slider" type="range" name="rangeInput" min="1" max="100" oninput="updateGridInput(this.value);" oninput="gridCreate(this.value);">
+               <button type="button" name="myButton" class="button" onclick="setColor(this.value);">Draw</button>
+               <button type="button" name="myButton" class="button" onclick="erase()";>Eraser</button>
+               <button type="button" name="myButton" onclick="resetGrid();" class="button">Clear</button>
+               <button type="color" name="myButton" class="button buttonColorGroup" style="padding: 10px">
+                  <p>Color</p>
+                  <input type="color" id="colorPick" name="colorPick" value="#3a3a3a" onchange="setColor(this.value);">
+               </button>
+               <button id="download"  type="button" name="myButton" class="button">Download</button>
+            </div>
+         </div>
+      </container>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="html2canvas.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>
